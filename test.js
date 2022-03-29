@@ -24,7 +24,3 @@ test('support SVGO options', async t => {
 test.failing('error on corrupt SVG', async t => {
 	await t.throwsAsync(imageminSvgo()('<svg>style><</style></svg>'), {message: /Error in parsing SVG/});
 });
-
-test('ignore non valid SVG', async t => {
-	t.is(await imageminSvgo()('<html></html>'), '<html></html>');
-});
